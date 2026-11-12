@@ -18,7 +18,7 @@
 window.FENG_DATA = {
   artist: "fakemink",
   game: "minkle",
-  icon: "Easter Pink",   // which release's cover becomes the browser tab icon
+  icon: "London's Saviour",   // which release's cover becomes the browser tab icon
 
   // result line by number of tries (1–6), and when you lose
   verdicts: {
