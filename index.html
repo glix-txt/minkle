@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>minkle – the daily fakemink guessing game</title>
+  <meta name="description" content="minkle is a daily guessing game for fakemink. Guess the song from a 0.5 second clip, or the album, EP or single from a 1-pixel cover. fakemink wordle / heardle.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="minkle – the daily fakemink guessing game">
+  <meta property="og:description" content="Guess the fakemink song from a 0.5s clip, or the cover from 1 pixel. New puzzle every day.">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#0c0a09">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DotGothic16&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="curtain" aria-hidden="true"></div>
+  <div class="flare" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div id="camflash" aria-hidden="true"></div>
+  <div class="foam" aria-hidden="true"></div>
+
+  <header>
+    <button class="icon" id="helpBtn" aria-label="How to play">?</button>
+    <div class="logo">
+      <p class="label">ETNAVERAVELA</p>
+      <h1>minkle <span class="dot">.</span></h1>
+      <p class="tag">guess the fakemink</p>
+    </div>
+    <button class="icon" id="statsBtn" aria-label="Stats">
+      <svg viewBox="0 0 20 20" width="17" height="17" fill="currentColor"><rect x="2" y="10" width="4" height="8" rx="1"/><rect x="8" y="5" width="4" height="13" rx="1"/><rect x="14" y="2" width="4" height="16" rx="1"/></svg>
+    </button>
+  </header>
+
+  <nav class="tabs">
+    <div class="seg" id="modeSeg">
+      <button data-mode="cover" class="on">cover</button>
+      <button data-mode="song">song</button>
+    </div>
+    <div class="seg small" id="diffSeg" hidden>
+      <button data-diff="easy" class="on">easy</button>
+      <button data-diff="hard">hard</button>
+    </div>
+    <div class="seg small" id="playSeg">
+      <button data-play="daily" class="on">daily</button>
+      <button data-play="unlimited">unlimited</button>
+    </div>
+  </nav>
+
+  <main>
+    <p class="sub" id="sub"></p>
+
+    <section id="setup" class="card" hidden>
+      <h2>nothing to play yet .</h2>
+      <p id="setupMsg"></p>
+      <p>drop files in <code>covers/</code> and <code>audio/</code>, run <code>npm run scan</code>, then refresh.</p>
+    </section>
+
+    <section id="game" hidden>
+      <!-- cover stage: a flash photo print with a camera date stamp -->
+      <div id="coverStage" class="stage">
+        <div class="print">
+          <canvas id="cover" width="320" height="320"></canvas>
+          <span class="stamp" id="stamp" aria-hidden="true"></span>
+          <span class="caption" aria-hidden="true">who's this .</span>
+          <span class="pflare" aria-hidden="true"></span>
+        </div>
+        <div class="badge" id="pixBadge"></div>
+      </div>
+
+      <!-- song stage -->
+      <div id="songStage" class="stage" hidden>
+        <div class="player">
+          <button id="playBtn" class="play" aria-label="Play">▶</button>
+          <div class="bar" id="bar">
+            <div class="unlocked" id="unlocked"></div>
+            <div class="progress" id="progress"></div>
+            <span class="tick" style="left:10%"></span>
+            <span class="tick" style="left:20%"></span>
+            <span class="tick" style="left:60%"></span>
+          </div>
+          <span class="dur" id="durLabel">0.5s</span>
+        </div>
+        <label class="vol">vol <input type="range" id="vol" min="0" max="1" step="0.01" value="0.6"></label>
+      </div>
+
+      <ol id="board" class="board"></ol>
+
+      <form id="guessForm" autocomplete="off">
+        <div class="ac">
+          <input id="guess" placeholder="type a guess…" spellcheck="false">
+          <ul id="acList" hidden></ul>
+        </div>
+        <div class="row">
+          <button type="button" id="skipBtn" class="ghost">skip</button>
+          <button type="submit" id="submitBtn">guess</button>
+        </div>
+      </form>
+
+      <div id="result" class="card result" hidden>
+        <img id="resultImg" alt="">
+        <div>
+          <p class="verdict" id="verdict"></p>
+          <p class="answer" id="answer"></p>
+          <p class="meta" id="answerMeta"></p>
+          <div class="row">
+            <button id="shareBtn">share</button>
+            <button id="nextBtn" class="ghost" hidden>next</button>
+          </div>
+          <p class="next" id="countdown"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="helpDlg">
+    <h2>how to play .</h2>
+    <p><b>cover</b> — guess the fakemink release from its cover. it starts as <b>1 pixel</b>, then 2×2, 4×4, 8×8, 16×16, 32×32.</p>
+    <p><b>song</b> — guess the song from a clip. you get <b>0.5s</b>, then 1s, 3s, then 5s (capped).</p>
+    <p><b>easy</b> plays the hook. <b>hard</b> plays a random part of the song instead — never the chorus. hard has its own daily puzzle and stats.</p>
+    <p>6 tries. skipping uses a try.</p>
+    <p class="legend"><span class="k close"></span> close: same project (song) / same type (cover)</p>
+    <p>daily resets at midnight. unlimited is endless practice with its own stats — press <b>enter</b> after a round to jump to the next one.</p>
+    <form method="dialog"><button>got it</button></form>
+  </dialog>
+
+  <dialog id="statsDlg">
+    <h2 id="statsTitle">stats</h2>
+    <div class="seg small stats-seg" id="statsSeg">
+      <button data-play="daily" class="on">daily</button>
+      <button data-play="unlimited">unlimited</button>
+    </div>
+    <div class="stats" id="statsNums"></div>
+    <div class="dist" id="dist"></div>
+    <form method="dialog"><button>close</button></form>
+  </dialog>
+
+  <div id="toast" hidden></div>
+  <audio id="audio" preload="auto"></audio>
+
+  <script>
+    // orange camera date stamp on the cover print, e.g.  '26 11 12
+    (() => { const d = new Date(), p = (x) => String(x).padStart(2, "0");
+      document.getElementById("stamp").textContent = `'${p(d.getFullYear() % 100)} ${p(d.getMonth() + 1)} ${p(d.getDate())}`; })();
+  </script>
+  <script src="data.js"></script>
+  <script src="assets.js"></script>
+  <script src="game.js"></script>
+  <script data-goatcounter="https://minkle.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

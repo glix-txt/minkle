@@ -1,0 +1,341 @@
+/* minkle — fakemink coded.
+   · the rose-damask curtain from Terrified . (gold roses, heavy drape folds, shot with flash)
+   · the pink acoustic-foam pyramids from Easter Pink
+   · the red-eye lens flare from Terrified . / the sun flare from Night , Blooming Jasmine .
+   · black + white boutique stripes from Sniffany
+   · cut-out scrapbook collage on black from The Boy Who Cried Terrified . (tape, prints, menus)
+   · orange disposable-camera date stamps, everything lowercase, everything ends in " ." */
+:root {
+  --bg: #0d0907;
+  --panel: rgba(20, 15, 12, .86);
+  --panel-solid: #17110d;
+  --line: #3b2e25;
+  --text: #f5ecdf;           /* flash-lit cream */
+  --dim: #a8988a;
+  --paper: #efe6d6;          /* photo print / mr chow menu */
+
+  --pink: #f4a6c8;           /* Easter Pink foam */
+  --pink-mid: #e486b0;
+  --pink-deep: #c25d8d;
+  --flare: #ff3550;          /* red-eye flare */
+  --gold: #cdb787;           /* damask */
+  --stamp: #ff8a1e;          /* date stamp */
+
+  --wrong: #e2475a;
+  --close: #f2c24c;
+  --right: #8fd885;
+
+  --serif: "Instrument Serif", "Didot", "Bodoni MT", Georgia, serif;
+  --dot: "DotGothic16", ui-monospace, "Courier New", monospace;
+  --body: "Inter", "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+  --r: 14px;
+
+  --foam: conic-gradient(from 45deg, #fbc4da 0 25%, var(--pink-mid) 0 50%, var(--pink-deep) 0 75%, var(--pink) 0);
+  --wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 40' preserveAspectRatio='none'%3E%3Crect x='1' y='10' width='3' height='20' rx='1.5'/%3E%3Crect x='6' y='2' width='3' height='36' rx='1.5'/%3E%3Crect x='11' y='6.5' width='3' height='27' rx='1.5'/%3E%3Crect x='16' y='7' width='3' height='26' rx='1.5'/%3E%3Crect x='21' y='2.5' width='3' height='35' rx='1.5'/%3E%3Crect x='26' y='4.5' width='3' height='31' rx='1.5'/%3E%3Crect x='31' y='6.5' width='3' height='27' rx='1.5'/%3E%3Crect x='36' y='4' width='3' height='32' rx='1.5'/%3E%3Crect x='41' y='5' width='3' height='30' rx='1.5'/%3E%3Crect x='46' y='7.5' width='3' height='25' rx='1.5'/%3E%3Crect x='51' y='8' width='3' height='24' rx='1.5'/%3E%3Crect x='56' y='10' width='3' height='20' rx='1.5'/%3E%3Crect x='61' y='10.5' width='3' height='19' rx='1.5'/%3E%3Crect x='66' y='14.5' width='3' height='11' rx='1.5'/%3E%3Crect x='71' y='14.5' width='3' height='11' rx='1.5'/%3E%3Crect x='76' y='11.5' width='3' height='17' rx='1.5'/%3E%3Crect x='81' y='10' width='3' height='20' rx='1.5'/%3E%3Crect x='86' y='12' width='3' height='16' rx='1.5'/%3E%3Crect x='91' y='7' width='3' height='26' rx='1.5'/%3E%3Crect x='96' y='7.5' width='3' height='25' rx='1.5'/%3E%3Crect x='101' y='2.5' width='3' height='35' rx='1.5'/%3E%3Crect x='106' y='2.5' width='3' height='35' rx='1.5'/%3E%3Crect x='111' y='8' width='3' height='24' rx='1.5'/%3E%3Crect x='116' y='4.5' width='3' height='31' rx='1.5'/%3E%3Crect x='121' y='0.5' width='3' height='39' rx='1.5'/%3E%3Crect x='126' y='3' width='3' height='34' rx='1.5'/%3E%3Crect x='131' y='4' width='3' height='32' rx='1.5'/%3E%3Crect x='136' y='5' width='3' height='30' rx='1.5'/%3E%3Crect x='141' y='3.5' width='3' height='33' rx='1.5'/%3E%3Crect x='146' y='5' width='3' height='30' rx='1.5'/%3E%3Crect x='151' y='10' width='3' height='20' rx='1.5'/%3E%3Crect x='156' y='11.5' width='3' height='17' rx='1.5'/%3E%3Crect x='161' y='10.5' width='3' height='19' rx='1.5'/%3E%3Crect x='166' y='14' width='3' height='12' rx='1.5'/%3E%3Crect x='171' y='15' width='3' height='10' rx='1.5'/%3E%3Crect x='176' y='13.5' width='3' height='13' rx='1.5'/%3E%3Crect x='181' y='11.5' width='3' height='17' rx='1.5'/%3E%3Crect x='186' y='10.5' width='3' height='19' rx='1.5'/%3E%3Crect x='191' y='5' width='3' height='30' rx='1.5'/%3E%3Crect x='196' y='6.5' width='3' height='27' rx='1.5'/%3E%3Crect x='201' y='4' width='3' height='32' rx='1.5'/%3E%3Crect x='206' y='2' width='3' height='36' rx='1.5'/%3E%3Crect x='211' y='8.5' width='3' height='23' rx='1.5'/%3E%3Crect x='216' y='6.5' width='3' height='27' rx='1.5'/%3E%3Crect x='221' y='4' width='3' height='32' rx='1.5'/%3E%3Crect x='226' y='4.5' width='3' height='31' rx='1.5'/%3E%3Crect x='231' y='6' width='3' height='28' rx='1.5'/%3E%3Crect x='236' y='8.5' width='3' height='23' rx='1.5'/%3E%3Crect x='241' y='3.5' width='3' height='33' rx='1.5'/%3E%3Crect x='246' y='11' width='3' height='18' rx='1.5'/%3E%3Crect x='251' y='10' width='3' height='20' rx='1.5'/%3E%3Crect x='256' y='11.5' width='3' height='17' rx='1.5'/%3E%3Crect x='261' y='11.5' width='3' height='17' rx='1.5'/%3E%3Crect x='266' y='12' width='3' height='16' rx='1.5'/%3E%3Crect x='271' y='14' width='3' height='12' rx='1.5'/%3E%3Crect x='276' y='14' width='3' height='12' rx='1.5'/%3E%3Crect x='281' y='11.5' width='3' height='17' rx='1.5'/%3E%3Crect x='286' y='11' width='3' height='18' rx='1.5'/%3E%3Crect x='291' y='9' width='3' height='22' rx='1.5'/%3E%3Crect x='296' y='7.5' width='3' height='25' rx='1.5'/%3E%3Crect x='301' y='7.5' width='3' height='25' rx='1.5'/%3E%3Crect x='306' y='5' width='3' height='30' rx='1.5'/%3E%3Crect x='311' y='4' width='3' height='32' rx='1.5'/%3E%3Crect x='316' y='7' width='3' height='26' rx='1.5'/%3E%3C/svg%3E");
+  --rose: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23cdb787' stroke-width='2.2' stroke-linecap='round'%3E%3Cg id='r'%3E%3Cpath d='M35 35m-4 0a4 4 0 1 1 6 3a8 8 0 1 1-12-6a13 13 0 1 1 18 10a19 19 0 1 1-27-14'/%3E%3Cpath d='M52 50q10 6 8 18q-9-3-8-18zM18 50q-10 6-8 18q9-3 8-18z'/%3E%3C/g%3E%3Cuse href='%23r' x='70' y='70'/%3E%3C/g%3E%3C/svg%3E");
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html { background: var(--bg); }
+body {
+  margin: 0; min-height: 100vh; color: var(--text); background: var(--bg);
+  font: 500 15px/1.45 var(--body); overflow-x: hidden;
+}
+
+/* ---------- backdrop: the Terrified . curtain ---------- */
+.curtain {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    /* drape folds: light catches the ridges, falls into the troughs */
+    repeating-linear-gradient(90deg,
+      rgba(0,0,0,.55) 0, rgba(0,0,0,.15) 28px, rgba(255,230,190,.07) 52px, rgba(0,0,0,.2) 76px, rgba(0,0,0,.55) 110px),
+    linear-gradient(180deg, #2a1d14, #1a120d 55%, #0d0907);
+  opacity: .9;
+}
+.curtain::before {     /* the damask roses, woven faintly into the fabric */
+  content: ""; position: absolute; inset: 0; background: var(--rose) 0 0 / 120px 120px; opacity: .22;
+}
+.curtain::after {      /* flash falloff: lit in the middle, dead black at the edges */
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 38%, rgba(13,9,7,.35) 0%, rgba(13,9,7,.8) 60%, #0d0907 100%);
+}
+
+/* red-eye lens flare, top right */
+.flare {
+  position: fixed; z-index: 0; pointer-events: none; width: 64vmax; height: 64vmax;
+  right: -26vmax; top: -28vmax; border-radius: 50%;
+  background: radial-gradient(circle, #fff 0 .6%, rgba(255,210,220,.85) 1.4%, rgba(255,90,120,.5) 5%,
+    rgba(255,53,80,.26) 16%, rgba(194,93,141,.1) 36%, transparent 60%);
+  animation: breathe 7s ease-in-out infinite;
+}
+.flare::after {        /* the anamorphic streak */
+  content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 3px; transform: translateY(-50%);
+  background: linear-gradient(90deg, transparent, rgba(255,120,150,.45) 35%, rgba(255,255,255,.7) 50%, rgba(255,120,150,.45) 65%, transparent);
+  filter: blur(1px);
+}
+@keyframes breathe { 50% { opacity: .72; transform: scale(1.05); } }
+
+/* sensor grain */
+.grain {
+  position: fixed; inset: -50%; z-index: 50; pointer-events: none; opacity: .14;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: jitter .6s steps(4) infinite;
+}
+@keyframes jitter {
+  0% { transform: translate(0, 0); } 25% { transform: translate(-3%, 2%); }
+  50% { transform: translate(2%, -3%); } 75% { transform: translate(-1%, -1%); }
+}
+
+/* camera flash when a round ends: white pop on a win, red-eye on a loss */
+#camflash { position: fixed; inset: 0; z-index: 70; pointer-events: none; opacity: 0; }
+#camflash.win  { background: radial-gradient(circle at 50% 35%, #fff, #fff6ee 40%, rgba(255,240,230,.85)); animation: pop 1s ease-out; }
+#camflash.lose { background: radial-gradient(circle at 50% 35%, rgba(255,53,80,.55), rgba(120,0,20,.6)); animation: pop 1.1s ease-out; }
+@keyframes pop { 0% { opacity: 0; } 6% { opacity: 1; } 100% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) { .flare, .grain, #camflash { animation: none !important; } }
+
+header, nav, main, .foam { position: relative; z-index: 1; }
+
+/* ---------- Easter Pink foam strip ---------- */
+.foam {
+  height: 30px; background: var(--foam) 0 0 / 30px 30px;
+  box-shadow: 0 10px 30px rgba(244,166,200,.18), inset 0 -8px 12px rgba(0,0,0,.25);
+}
+.foam::after {          /* foam fades into the room */
+  content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 40px;
+  background: linear-gradient(rgba(244,166,200,.12), transparent);
+}
+
+/* ---------- header ---------- */
+header {
+  display: flex; align-items: center; justify-content: space-between; gap: .6rem;
+  max-width: 600px; margin: 0 auto; padding: 1.4rem 1rem .2rem;
+}
+.logo { text-align: center; flex: 1; min-width: 0; }
+.label {
+  margin: 0 0 .25rem; font: 400 .66rem/1 var(--dot); letter-spacing: .3em; color: var(--gold); opacity: .8;
+}
+h1 {
+  margin: 0; font: italic 400 clamp(3rem, 15vw, 5.2rem)/.85 var(--serif); letter-spacing: -.02em;
+  color: var(--text);
+  text-shadow: 0 0 2px #fff, 0 0 18px rgba(255,220,225,.45), 0 0 50px rgba(255,53,80,.25);
+}
+h1 .dot { color: var(--flare); font-style: normal; text-shadow: 0 0 10px var(--flare), 0 0 26px var(--flare); }
+.tag { margin: .55rem 0 0; font: 400 .8rem/1 var(--dot); letter-spacing: .12em; color: var(--dim); }
+
+button { font: inherit; cursor: pointer; }
+.icon {
+  flex: none; display: grid; place-items: center; width: 2.6rem; height: 2.6rem; padding: 0;
+  font: italic 400 1.5rem/1 var(--serif); color: var(--text); background: var(--panel);
+  border: 1px solid var(--line); border-radius: 50%; transition: border-color .15s, color .15s, transform .15s, box-shadow .15s;
+}
+.icon:hover { border-color: var(--pink); color: var(--pink); transform: rotate(-8deg); box-shadow: 0 0 16px rgba(244,166,200,.35); }
+
+/* ---------- tabs ---------- */
+.tabs { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; padding: 1.2rem 1rem 0; }
+.seg {
+  display: inline-flex; padding: 3px; gap: 2px; border-radius: 999px;
+  background: var(--panel); border: 1px solid var(--line); backdrop-filter: blur(6px);
+}
+.seg button {
+  border: 0; padding: .45rem 1.05rem; border-radius: 999px; background: transparent; color: var(--dim);
+  font: 600 .88rem/1 var(--body); transition: background .15s, color .15s;
+}
+.seg button:hover { color: var(--text); }
+.seg button.on { background: var(--text); color: var(--bg); }
+#modeSeg button.on { background: var(--foam) 0 0 / 14px 14px; color: #3a0f22; text-shadow: 0 1px 0 rgba(255,255,255,.5); }
+/* Sniffany boutique stripes for the hard toggle */
+#diffSeg button[data-diff="hard"].on {
+  background: repeating-linear-gradient(90deg, #f5ecdf 0 6px, #0d0907 6px 12px); color: #0d0907;
+  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+}
+.seg.small button { padding: .4rem .8rem; font-size: .8rem; }
+
+/* ---------- main ---------- */
+main { max-width: 540px; margin: 0 auto; padding: 0 1rem 4rem; }
+.sub {
+  text-align: center; margin: 1.1rem 0 1.2rem; font: 400 .95rem/1 var(--dot);
+  color: var(--stamp); letter-spacing: .08em; text-shadow: 0 0 6px rgba(255,138,30,.7), 0 0 14px rgba(255,90,20,.35);
+}
+
+.card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--r);
+  padding: 1.3rem; backdrop-filter: blur(8px);
+}
+.card h2 { font: italic 400 2rem/1 var(--serif); margin: 0 0 .5rem; }
+code { font: 400 .95em var(--dot); color: var(--pink); }
+
+/* ---------- stages ---------- */
+.stage { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+
+/* cover = a flash print taped to the curtain */
+.print {
+  position: relative; padding: 11px 11px 38px; background: var(--paper); border-radius: 2px;
+  transform: rotate(-1.8deg);
+  box-shadow: 0 1px 0 #fff inset, 0 2px 0 rgba(0,0,0,.2), 0 22px 44px rgba(0,0,0,.7), 0 0 80px rgba(255,53,80,.1);
+}
+.print::before, .print::after {           /* masking tape */
+  content: ""; position: absolute; width: 84px; height: 24px; top: -12px;
+  background: rgba(240,228,200,.55); backdrop-filter: blur(1px);
+  box-shadow: 0 1px 3px rgba(0,0,0,.25);
+  clip-path: polygon(3% 0, 97% 4%, 100% 30%, 96% 55%, 100% 80%, 97% 100%, 2% 96%, 0 70%, 4% 45%, 0 18%);
+}
+.print::before { left: -18px; transform: rotate(-32deg); }
+.print::after  { right: -18px; transform: rotate(28deg); }
+#cover {
+  display: block; width: min(300px, 74vw); aspect-ratio: 1; image-rendering: pixelated; background: #16161a;
+}
+.pflare {                                /* red-eye flare caught on the corner of the print */
+  position: absolute; left: -26px; bottom: 6px; width: 64px; height: 64px; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, #fff 0 6%, rgba(255,200,215,.9) 12%, rgba(255,53,80,.55) 30%, transparent 68%);
+  mix-blend-mode: screen; animation: breathe 4s ease-in-out infinite;
+}
+.stamp {
+  position: absolute; right: 20px; bottom: 48px; font: 400 1rem/1 var(--dot); letter-spacing: .06em;
+  color: var(--stamp); text-shadow: 0 0 4px rgba(255,138,30,.95), 0 0 12px rgba(255,90,20,.65);
+  mix-blend-mode: screen; pointer-events: none;
+}
+.caption {
+  position: absolute; left: 14px; bottom: 9px; font: italic 400 1.15rem/1 var(--serif); color: #4a3a2e;
+}
+.badge {
+  font: 400 .88rem/1 var(--dot); color: var(--dim); letter-spacing: .08em;
+  padding: .35rem .8rem; border: 1px solid var(--line); border-radius: 999px; background: var(--panel);
+}
+
+/* song player = a voice note */
+.player {
+  display: flex; align-items: center; gap: .9rem; width: 100%; padding: 1rem 1.1rem 1rem .9rem;
+  background: linear-gradient(180deg, rgba(36,27,22,.92), rgba(18,13,10,.92));
+  border: 1px solid var(--line); border-radius: 26px; backdrop-filter: blur(8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.05);
+}
+.play {
+  flex: none; width: 3.4rem; height: 3.4rem; padding: 0 0 0 3px; border-radius: 50%; border: 0;
+  background: radial-gradient(circle at 50% 50%, #fff 0 16%, #ffd3dc 30%, var(--flare) 68%, #8f1426);
+  color: #2a0710; font-size: 1.1rem;
+  box-shadow: 0 0 24px rgba(255,53,80,.6), 0 0 0 1px rgba(255,255,255,.15) inset; transition: transform .12s, box-shadow .2s;
+}
+.play:hover { transform: scale(1.06); box-shadow: 0 0 36px rgba(255,53,80,.85); }
+.play:active { transform: scale(.95); }
+.bar {
+  position: relative; flex: 1; height: 40px; background: #3a2e27;
+  -webkit-mask: var(--wave) 0 0 / 100% 100% no-repeat; mask: var(--wave) 0 0 / 100% 100% no-repeat;
+}
+.unlocked { position: absolute; inset: 0 auto 0 0; background: #8a776a; transition: width .4s; }
+.progress { position: absolute; inset: 0 auto 0 0; width: 0; background: linear-gradient(90deg, var(--pink), var(--flare)); }
+.tick { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--stamp); }
+.dur { min-width: 2.8rem; text-align: right; font: 400 1.05rem/1 var(--dot); color: var(--stamp); text-shadow: 0 0 6px rgba(255,138,30,.6); }
+.vol { display: flex; align-items: center; gap: .5rem; font: 400 .85rem var(--dot); color: var(--dim); letter-spacing: .06em; }
+.vol input { accent-color: var(--pink); }
+
+/* ---------- guess board ---------- */
+.board { list-style: none; padding: 0; margin: 1.5rem 0 1rem; display: grid; gap: .4rem; }
+.board li {
+  display: flex; justify-content: space-between; align-items: center; gap: .5rem;
+  min-height: 2.75rem; padding: .5rem .95rem; border-radius: 10px;
+  background: rgba(13,9,7,.6); border: 1px dashed var(--line); color: #75685d; font: 400 .9rem/1 var(--dot);
+}
+.board li.wrong, .board li.close, .board li.right, .board li.skip { border-style: solid; font: 600 .98rem/1.2 var(--body); }
+.board li.wrong { background: linear-gradient(90deg, rgba(226,71,90,.28), rgba(226,71,90,.1)); border-color: rgba(226,71,90,.8); color: #ffdfe2; }
+.board li.close { background: linear-gradient(90deg, rgba(242,194,76,.28), rgba(242,194,76,.1)); border-color: rgba(242,194,76,.85); color: #fff1c8; }
+.board li.right { background: linear-gradient(90deg, rgba(143,216,133,.32), rgba(143,216,133,.12)); border-color: var(--right); color: #eaffe4; box-shadow: 0 0 24px rgba(143,216,133,.3); }
+.board li.skip  {
+  color: var(--dim); font: 400 .9rem var(--dot); border-color: var(--line);
+  background: repeating-linear-gradient(90deg, rgba(245,236,223,.06) 0 10px, transparent 10px 20px);
+}
+.board li small { font: 400 .78rem/1 var(--dot); white-space: nowrap; opacity: .85; letter-spacing: .04em; }
+.board li.new { animation: develop .6s ease-out both; }
+@keyframes develop {       /* like a flash photo developing */
+  0% { filter: brightness(3) saturate(0) blur(2px); transform: translateY(5px); }
+  100% { filter: none; transform: none; }
+}
+
+/* ---------- input ---------- */
+.ac { position: relative; }
+#guess {
+  width: 100%; font: 500 1rem var(--body); color: var(--text); background: rgba(13,9,7,.8);
+  border: 1px solid var(--line); border-radius: 12px; padding: .9rem 1rem; outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+#guess::placeholder { color: #75685d; font: italic 400 1.2rem var(--serif); }
+#guess:focus { border-color: var(--pink); box-shadow: 0 0 0 3px rgba(244,166,200,.16), 0 0 24px rgba(244,166,200,.12); }
+#acList {
+  position: absolute; bottom: calc(100% + 8px); left: 0; right: 0; z-index: 5;
+  list-style: none; margin: 0; padding: .3rem; max-height: 15rem; overflow-y: auto;
+  background: var(--panel-solid); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 16px 40px rgba(0,0,0,.65);
+}
+#acList li { padding: .55rem .7rem; border-radius: 8px; cursor: pointer; display: flex; justify-content: space-between; gap: .6rem; font-weight: 600; }
+#acList li small { color: var(--dim); font: 400 .75rem var(--dot); white-space: nowrap; align-self: center; }
+#acList li.hi, #acList li:hover { background: var(--pink); color: #3a0f22; }
+#acList li.hi small, #acList li:hover small { color: #6a3050; }
+
+.row { display: flex; gap: .55rem; justify-content: flex-end; margin-top: .8rem; flex-wrap: wrap; }
+.row button, dialog button {
+  border: 1px solid var(--text); border-radius: 999px; padding: .58rem 1.35rem;
+  background: var(--text); color: var(--bg); font: 600 .9rem var(--body); transition: transform .12s, background .15s, color .15s, box-shadow .15s;
+}
+.row button:hover, dialog button:hover { background: var(--pink); border-color: var(--pink); color: #3a0f22; box-shadow: 0 0 18px rgba(244,166,200,.35); }
+.row button:active, dialog button:active { transform: scale(.96); }
+.row button.ghost { background: transparent; color: var(--text); border-color: var(--line); }
+.row button.ghost:hover { border-color: var(--pink); color: var(--pink); background: transparent; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+
+/* ---------- result: a cut-out print on black, like the Boy Who Cried Terrified . collage ---------- */
+.result {
+  position: relative; display: flex; gap: 1.2rem; align-items: center; margin-top: 1.5rem; flex-wrap: wrap;
+  background: #0b0806; animation: develop .7s ease-out both; overflow: visible;
+}
+.result img {
+  width: 128px; height: 128px; object-fit: cover; border: 7px solid var(--paper); border-bottom-width: 20px;
+  border-radius: 2px; transform: rotate(-4deg); box-shadow: 0 12px 26px rgba(0,0,0,.7);
+}
+.result > div { flex: 1; min-width: 190px; }
+.verdict { margin: 0; font: 400 .9rem/1 var(--dot); color: var(--stamp); letter-spacing: .08em; text-shadow: 0 0 8px rgba(255,138,30,.6); }
+.answer { margin: .3rem 0 .15rem; font: italic 400 2.3rem/1 var(--serif); }
+.answer::after { content: " ."; color: var(--flare); font-style: normal; text-shadow: 0 0 10px var(--flare); }
+.meta, .next { margin: .2rem 0; color: var(--dim); font: 400 .82rem/1.2 var(--dot); letter-spacing: .04em; }
+.next { color: var(--pink); }
+.result .row { justify-content: flex-start; }
+
+/* ---------- dialogs ---------- */
+dialog {
+  background: var(--panel-solid); color: var(--text); border: 1px solid var(--line); border-radius: 18px;
+  max-width: min(440px, calc(100% - 2rem)); padding: 0 1.6rem 1.6rem; box-shadow: 0 24px 60px rgba(0,0,0,.75); overflow: hidden;
+}
+dialog::before {          /* foam header */
+  content: ""; display: block; height: 18px; margin: 0 -1.6rem 1.3rem; background: var(--foam) 0 0 / 18px 18px;
+}
+dialog::backdrop { background: rgba(8,5,4,.78); backdrop-filter: blur(3px); }
+dialog h2 { margin: 0 0 .6rem; font: italic 400 2.3rem/1 var(--serif); }
+dialog p { margin: .55rem 0; color: #ddd0c1; }
+dialog b { color: var(--pink); font-weight: 600; }
+dialog form { text-align: right; margin-top: 1.1rem; }
+.legend { display: flex; align-items: center; gap: .5rem; }
+.k { display: inline-block; width: 1rem; height: 1rem; border-radius: 4px; border: 1px solid var(--close); }
+.k.close { background: rgba(242,194,76,.45); }
+
+.stats-seg { margin: 0 0 1.1rem; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; gap: .4rem; }
+.stats b { display: block; font: italic 400 2.4rem/1 var(--serif); color: var(--text); }
+.stats span { font: 400 .72rem var(--dot); color: var(--dim); letter-spacing: .04em; }
+.dist { margin-top: 1.1rem; display: grid; gap: .35rem; }
+.dist div { display: flex; align-items: center; gap: .5rem; font: 400 .9rem var(--dot); color: var(--dim); }
+.dist i { display: block; background: #2e241e; padding: .15rem .5rem; border-radius: 6px;
+  text-align: right; font: 600 .8rem var(--body); font-style: normal; min-width: 1.8rem; color: var(--text); }
+.dist i.hl { background: var(--foam) 0 0 / 12px 12px; color: #3a0f22; }
+
+#toast {
+  position: fixed; top: 2.6rem; left: 50%; transform: translateX(-50%) rotate(-1.5deg); z-index: 60;
+  background: var(--paper); color: #2a1d14; padding: .5rem 1.1rem; border-radius: 3px;
+  font: italic 400 1.15rem var(--serif); box-shadow: 0 10px 30px rgba(0,0,0,.55);
+}
+
+@media (max-width: 440px) {
+  .seg button { padding: .42rem .8rem; }
+  .seg.small button { padding: .38rem .6rem; }
+  .player { padding: .85rem .9rem .85rem .75rem; gap: .7rem; }
+  .play { width: 3rem; height: 3rem; }
+  .foam { height: 24px; background-size: 24px 24px; }
+}
