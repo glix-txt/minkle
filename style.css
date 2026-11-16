@@ -339,3 +339,28 @@ dialog form { text-align: right; margin-top: 1.1rem; }
   .play { width: 3rem; height: 3rem; }
   .foam { height: 24px; background-size: 24px 24px; }
 }
+
+/* ---------- leaderboard + credit (daily-board.js) ---------- */
+header > .icons { position: relative; z-index: 2; flex: none; display: flex; flex-direction: column; gap: .45rem; }
+@media (min-width: 560px) {
+  header > .icons { flex: 0 0 5.9rem; flex-direction: row; }
+  header > .icons:last-child { justify-content: flex-end; }
+}
+.crowd { margin: .5rem 0 .1rem; font: 400 .85rem/1.3 var(--dot); letter-spacing: .03em; color: var(--stamp); text-shadow: 0 0 8px rgba(255,138,30,.45); }
+#lbDlg { width: min(440px, calc(100% - 2rem)); }
+#lbBody { max-height: 58vh; overflow-y: auto; }
+.lb-sub, .lb-dim { color: var(--dim) !important; font: 400 .85rem var(--dot); }
+.lb-day { padding: .75rem .9rem; margin: .65rem 0; background: #120d0a; border: 1px solid var(--line); border-radius: 12px; }
+.lb-day h3 { margin: 0; font: italic 400 1.5rem/1 var(--serif); display: flex; justify-content: space-between; align-items: baseline; }
+.lb-day h3 small { font: 400 .78rem var(--dot); color: var(--dim); font-style: normal; }
+.lb-head { margin: .3rem 0 0 !important; font: 400 .85rem var(--dot); color: var(--stamp) !important; }
+.lb-day .dist { margin-top: .5rem; gap: .25rem; }
+.credit { position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .8rem;
+  max-width: 600px; margin: 2.6rem auto 1.8rem; padding: 0 1rem; font: 400 .85rem var(--dot); color: var(--dim); letter-spacing: .04em; }
+.credit b { font: italic 400 1.35rem var(--serif); color: var(--pink); letter-spacing: 0; }
+.credit .dc { display: inline-flex; align-items: center; gap: .45rem; padding: .42rem .95rem; background: var(--panel); color: var(--text);
+  border: 1px solid var(--line); border-radius: 999px; font: 600 .82rem var(--body);
+  transition: border-color .15s, color .15s, box-shadow .15s, transform .15s; }
+.credit .dc svg { color: #8c96ff; }
+.credit .dc:hover { border-color: #8c96ff; box-shadow: 0 0 16px rgba(88,101,242,.45); transform: rotate(-2deg); }
+.lb-day .dist i { min-width: 2.7rem; white-space: nowrap; }

@@ -200,12 +200,19 @@
     try { window.goatcounter?.count?.({ path: name, title: name, event: true }); } catch {}
   }
 
+  // tells daily-board.js (leaderboard) about rounds: "sd:render" on every render, "sd:finish" when one just ended
+  function announce(type) {
+    const detail = { play, kind: kind(), day, done: st.done, won: st.won, guesses: st.guesses.length };
+    try { document.dispatchEvent(new CustomEvent(type, { detail })); } catch {}
+  }
+
   function finish() {
     stopAudio();
     // camera flash: white pop on a win, red-eye on a loss (only if the page has #camflash)
     const fl = $("camflash");
     if (fl) { fl.className = ""; void fl.offsetWidth; fl.className = st.won ? "win" : "lose"; }
     track(`${kind()}-${play}-${st.won ? "win" : "loss"}`);
+    announce("sd:finish");
     const k = statsKey(kind(), play);
     const s = store.get(k, emptyStats());
     if (play === "daily") {
@@ -228,6 +235,7 @@
   // ---------- render ----------
   let shownRows = 0;   // rows already on screen, so only the newest guess animates in
   function render() {
+    announce("sd:render");
     const board = $("board");
     board.innerHTML = "";
     for (let i = 0; i < MAX; i++) {
