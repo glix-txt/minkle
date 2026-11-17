@@ -378,7 +378,19 @@
       ul.append(li);
     });
     ul.hidden = !acItems.length;
+    if (acItems.length) fitAc();
   }
+  // the list drops DOWN from the box: on phones the keyboard covers the bottom of the screen,
+  // so nudge the page up just enough that the box + a few suggestions stay visible above it
+  function fitAc() {
+    const ul = $("acList"), vv = window.visualViewport;
+    const visibleBottom = vv ? vv.offsetTop + vv.height : window.innerHeight;
+    const want = Math.min(ul.scrollHeight, 3 * 44 + 12);          // room for ~3 suggestions
+    let space = visibleBottom - $("guess").getBoundingClientRect().bottom - 12;
+    if (space < want) { window.scrollBy(0, want - space); space = want; }
+    ul.style.maxHeight = `${Math.max(want, Math.min(space, 240))}px`;
+  }
+  window.visualViewport?.addEventListener("resize", () => { if (!$("acList").hidden) fitAc(); });
   function closeAc() { $("acList").hidden = true; acItems = []; acIdx = -1; }
   function moveAc(d) {
     if (!acItems.length) return;

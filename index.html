@@ -88,8 +88,7 @@
         <label class="vol">vol <input type="range" id="vol" min="0" max="1" step="0.01" value="0.6"></label>
       </div>
 
-      <ol id="board" class="board"></ol>
-
+      <!-- input sits right under the picture/player so you never scroll back up; guesses list below it -->
       <form id="guessForm" autocomplete="off">
         <div class="ac">
           <input id="guess" placeholder="type a guess…" spellcheck="false">
@@ -114,6 +113,8 @@
           <p class="next" id="countdown"></p>
         </div>
       </div>
+
+      <ol id="board" class="board"></ol>
     </section>
   </main>
 
